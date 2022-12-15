@@ -26,5 +26,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+.row {
+    display: flex;
+    width: calc(100 / 6);
+    gap: 10px;
+    flex-wrap: wrap;
+}
 </style>
