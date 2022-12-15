@@ -28,8 +28,9 @@ export default {
 <style lang="scss" scoped>
 .row {
     display: flex;
-    width: calc(100 / 6);
+    width: calc(100 / 9);
     gap: 10px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 </style>

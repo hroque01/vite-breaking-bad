@@ -32,6 +32,7 @@ export default {
 
     img {
         padding: 20px;
+        width: 200px;
     }
 
     h4 {
