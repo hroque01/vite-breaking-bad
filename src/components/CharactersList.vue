@@ -19,7 +19,7 @@ export default {
     <section class="container">
         <div class="row">
             <div v-for="character in store.characterList" :key="character.id">
-                <SingleCharacterVue />
+                <SingleCharacterVue :info="character" />
             </div>
         </div>
     </section>
