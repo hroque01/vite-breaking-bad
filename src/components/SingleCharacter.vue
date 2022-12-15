@@ -13,7 +13,7 @@ export default {
     <div class="text-center card">
         <img :src="info.image" :alt="info.name">
         <h4>{{ info.name }}</h4>
-        <div class="information-cards">
+        <div class="information-single-cards">
             <div>{{ info.status }}</div>
             <div>{{ info.species }}</div>
         </div>
@@ -39,7 +39,7 @@ export default {
         color: $text-color-h;
     }
 
-    .information-cards {
+    .information-single-cards {
         padding-bottom: 10px;
         color: $text-color-fonts;
     }
