@@ -1,8 +1,12 @@
 <script>
+import SingleCharacterVue from './SingleCharacter.vue';
 import { store } from '../store.js';
 
 export default {
     name: "CharacterList",
+    components: {
+        SingleCharacterVue
+    },
     data() {
         return {
             store,
@@ -14,14 +18,8 @@ export default {
 <template>
     <section class="container">
         <div class="row">
-            <div>
-                <!-- template di card singola -->
-                <div class="text-center">
-                    <img src="" alt="">
-                    <h4>nome</h4>
-                    <div>stato</div>
-                    <div>specie</div>
-                </div>
+            <div v-for="character in store.characterList" :key="character.id">
+                <SingleCharacterVue />
             </div>
         </div>
     </section>
