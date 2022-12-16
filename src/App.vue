@@ -2,7 +2,6 @@
 import axios from "axios";
 import AppHeader from './components/AppHeader.vue';
 import CharactersListVue from './components/CharactersList.vue';
-import AppSearchVue from "./components/AppSearch.vue";
 
 
 import { store } from './store.js';
@@ -12,7 +11,6 @@ export default {
   components: {
     AppHeader,
     CharactersListVue,
-    AppSearchVue
   },
   data() {
     return {
@@ -24,12 +22,12 @@ export default {
 
       let myUrl = store.apiUrl;
 
-      if (store.searchStatus === "alive" || store.searchStatus === "dead" || store.searchStatus === "unknown") {
-        myUrl += `?${store.apiStatusParameter}=${store.searchStatus}`
+      if (store.searchStatus !== "select") {
+        myUrl += `?${store.apiStatusParameter}=${store.searchStatus}`;
       }
 
       axios
-        .get(store.myUrl)
+        .get(myUrl)
         .then(res => {
           store.characterList = res.data.results
         })
@@ -47,8 +45,7 @@ export default {
 <template>
   <AppHeader :msg="store.titolo" />
   <main>
-    <AppSearchVue @performSearch="getCharacter" />
-    <CharactersListVue />
+    <CharactersListVue @performSearch="getCharacter" />
   </main>
 </template>
 

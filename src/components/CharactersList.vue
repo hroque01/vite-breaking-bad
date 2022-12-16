@@ -17,6 +17,14 @@ export default {
 
 <template>
     <section class="container">
+        <div>
+            <select name="status" v-model="store.searchStatus" @click="$emit('performSearch')">
+                <option value="select">Select Status</option>
+                <option value="alive">Alive</option>
+                <option value="dead">Dead</option>
+                <option value="unknown">Unknown</option>
+            </select>
+        </div>
         <div class="info-cards">
             <h1>Found 20 character</h1>
         </div>
